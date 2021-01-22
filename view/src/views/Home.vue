@@ -6,7 +6,6 @@
 </template>
 
 <script>
-  import {saveMd, test} from "@/api/coreFunction";
 
   export default {
     name: 'Home',
@@ -23,7 +22,6 @@
         })
       },
       save() {
-        saveMd()
         console.log('md文件正在被保存');
       },
       imgAdd() {

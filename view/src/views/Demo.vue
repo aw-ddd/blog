@@ -1,6 +1,5 @@
 <template>
-  <div>
-    <el-button>提交</el-button>
+  <div class="demo">
   </div>
 </template>
 
@@ -11,5 +10,10 @@
 </script>
 
 <style scoped>
+  .demo{
+    height: 100%;
+    width: 100%;
+    background-color: red;
+  }
 
 </style>

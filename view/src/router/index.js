@@ -1,7 +1,9 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
 import Demo from '../views/Demo.vue'
+import BlogEdit from '../views/blog/BlogEdit.vue'
+import BlogShow from "../views/blog/BlogShow";
+import BlogList from "../views/blog/BlogList";
 
 Vue.use(VueRouter)
 
@@ -9,14 +11,28 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    component: Home
+    component: BlogList
   },
   {
     path: '/demo',
     name: 'Demo',
     component: Demo
+  },
+  {
+    path: '/blogList',
+    name: 'BlogList',
+    component: BlogList
+  },
+  {
+    path: '/blogEdit',
+    name: 'BlogEdit',
+    component: BlogEdit
+  },
+  {
+    path: '/blogShow',
+    name:'BlogShow',
+    component: BlogShow
   }
-
 ]
 
 const router = new VueRouter({
