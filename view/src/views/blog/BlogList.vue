@@ -2,13 +2,11 @@
   <div>
     <el-container>
       <el-header>
-        <el-button @click="toEdit">写博客</el-button>
+        <tool-head></tool-head>
       </el-header>
       <el-main>
-        <div v-for="e in textList" :key="e.textId">
-          <el-link type="primary" icon="el-icon-s-order"
-                   @click="toShow(e.textId)">{{ e.title }}
-          </el-link>
+        <div v-for="e in textList" :key="e.textId" style="margin-bottom: 20px">
+          <list-card :text="e"></list-card>
         </div>
       </el-main>
     </el-container>
@@ -16,8 +14,11 @@
 </template>
 
 <script>
+import ToolHead from "../../components/ui/ToolHead";
+import ListCard from "../../components/ui/ListCard";
 export default {
   name: "BlogList",
+  components: {ListCard, ToolHead},
   data() {
     return {
       textList: []

@@ -1,6 +1,5 @@
 <template>
   <div style="height: 100%;width: 80%;margin: 0 auto">
-    <el-button @click="toEdit">编辑</el-button>
     <!--
     value:初始值
     edittable:是否允许编辑
@@ -24,10 +23,10 @@ export default {
   name: "BlogShow",
   data() {
     return {
-      text:{
+      text: {
         textId: '',
         userId: '',
-        title:'',
+        title: '',
         text: '',
         createDate: '',
         updateDate: ''
@@ -38,14 +37,10 @@ export default {
     this.findById(this.$route.query.textId)
   },
   methods: {
-    findById(textId){
-      this.$request.get('/text/findById/'+textId, {}, e => {
+    findById(textId) {
+      this.$request.get('/text/findById/' + textId, {}, e => {
         this.text = e.data
       })
-    },
-    //跳转到编辑页面
-    toEdit(){
-      this.$router.push({path:'/blogEdit',query:{'textId':this.text.textId}})
     }
   }
 }
