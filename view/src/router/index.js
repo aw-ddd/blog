@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Demo from '../views/Demo.vue'
 import BlogEdit from '../views/blog/BlogEdit.vue'
 import BlogShow from "../views/blog/BlogShow";
 import BlogList from "../views/blog/BlogList";
@@ -12,11 +11,6 @@ const routes = [
     path: '/',
     name: 'Home',
     component: BlogList
-  },
-  {
-    path: '/demo',
-    name: 'Demo',
-    component: Demo
   },
   {
     path: '/blogList',

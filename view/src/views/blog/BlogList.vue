@@ -1,21 +1,16 @@
 <template>
   <div>
-    <el-container>
-      <el-header>
-        <tool-head></tool-head>
-      </el-header>
-      <el-main>
-        <div v-for="e in textList" :key="e.textId" style="margin-bottom: 20px">
-          <list-card :text="e"></list-card>
-        </div>
-      </el-main>
-    </el-container>
+    <tool-head></tool-head>
+    <div v-for="e in textList" :key="e.textId" style="margin-bottom: 20px">
+      <list-card :text="e"></list-card>
+    </div>
   </div>
 </template>
 
 <script>
 import ToolHead from "../../components/ui/ToolHead";
 import ListCard from "../../components/ui/ListCard";
+
 export default {
   name: "BlogList",
   components: {ListCard, ToolHead},
@@ -39,7 +34,7 @@ export default {
     },
     //跳转到详情页面
     toShow(textId) {
-      this.$router.push({path: `/blogShow`,query:{textId}})
+      this.$router.push({path: `/blogShow`, query: {textId}})
     }
   }
 }
