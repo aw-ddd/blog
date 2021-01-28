@@ -32,9 +32,13 @@ hs_err_pid*
 *.iml
 out
 gen
+MYBlog/target
+
 ### Vue template
 # gitignore template for Vue.js projects
 #
 # Recommended template: Node.gitignore
 
 /view/node_modules
+/view/dist
+

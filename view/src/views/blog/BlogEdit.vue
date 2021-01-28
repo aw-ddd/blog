@@ -8,10 +8,6 @@
         <el-col :span="18">
           <el-input style="display: inline" v-model="text.title" placeholder="请输入标题" maxlength="100" show-word-limit></el-input>
         </el-col>
-        <el-col :span="2">
-          <el-button @click="save">保存文章</el-button>
-        </el-col>
-
       </el-row>
     </div>
     <mavon-editor @save="save" @imgAdd="imgAdd" style="height: 100%" :value="text.text"></mavon-editor>
@@ -47,7 +43,7 @@ export default {
     //保存
     save(value, render) {
       this.text.text = value
-      axios.post('/api/text/save', this.text, {
+      axios.post(process.env.VUE_APP_BASE_API+'/text/save', this.text, {
         headers: {
           'Content-Type': 'application/json; charset=UTF-8'
         }

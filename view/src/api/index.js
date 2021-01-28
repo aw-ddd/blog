@@ -1,8 +1,8 @@
 import axios from "axios";
 
 let http = axios.create({
-  baseURL: '/api',
-  withCredentials: true,
+  baseURL: process.env.VUE_APP_BASE_API,
+  // withCredentials: true,
   headers: {
     'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'
   },

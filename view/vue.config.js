@@ -1,5 +1,5 @@
 module.exports = {
-  devServer: {
+  /*devServer: {
     proxy: {
       '/api': {
         target: 'http://localhost:8888/',  // 此处为接口地址
@@ -9,6 +9,5 @@ module.exports = {
         }
       }
     }
-  }
-
+  }*/
 }
