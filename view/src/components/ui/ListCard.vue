@@ -21,7 +21,6 @@ export default {
     text: Object
   },
   created() {
-    console.log(this.$dateUtils.formatStandardDate(this.text.createDate));
   },
   methods: {
     toShow(textId) {

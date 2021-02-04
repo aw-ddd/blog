@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import BlogEdit from '../views/blog/BlogEdit.vue'
 import BlogShow from "../views/blog/BlogShow";
 import BlogList from "../views/blog/BlogList";
+import Login from "../views/login/Login";
 
 Vue.use(VueRouter)
 
@@ -10,12 +11,7 @@ const routes = [
   {
     path: '/',
     name: '/',
-    component: BlogList
-  },
-  {
-    path: '',
-    name: '/',
-    component: BlogList
+    component: Login
   },
   {
     path: '/blogList',
@@ -31,7 +27,12 @@ const routes = [
     path: '/blogShow',
     name:'BlogShow',
     component: BlogShow
-  }
+  },
+  {
+    path: '/login',
+    name:'Login',
+    component: Login
+  },
 ]
 
 const router = new VueRouter({

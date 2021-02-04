@@ -43,12 +43,12 @@ export default {
     //保存
     save(value, render) {
       this.text.text = value
-      axios.post(process.env.VUE_APP_BASE_API+'/text/save', this.text, {
+      axios.post(process.env.VUE_APP_BASE_API+'text/save', this.text, {
         headers: {
           'Content-Type': 'application/json; charset=UTF-8'
-        }
+        },withCredentials:true
       }).then(e => {
-        this.text = e.data
+        this.text = e.data.data
         this.$notify({title: '成功', message: '保存文章成功', type: 'success'});
         // this.text.text = value
       })
@@ -59,7 +59,7 @@ export default {
     },
     findById(textId) {
       this.$request.get('/text/findById/' + textId, {}, e => {
-        this.text = e.data
+        this.text = e.data.data
       })
     },
     toList(){

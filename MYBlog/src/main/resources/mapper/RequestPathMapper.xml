@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dwj.mapper.RequestPathMapper">
+    <select id="findPermissionByUrl" parameterType="string" resultType="com.dwj.pojo.Permission">
+        SELECT s2.*
+        FROM request_path s1,
+             permission s2,
+             request_path_permission_relation s3
+        WHERE s1.id = s3.url_id
+          AND s2.id = s3.permission_id
+          AND s1.url = #{url}
+    </select>
+</mapper>

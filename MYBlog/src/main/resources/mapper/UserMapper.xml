@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dwj.mapper.UserMapper">
+    <select id="findPermissionByUsername" parameterType="string" resultType="com.dwj.pojo.Permission">
+        SELECT
+            s5.*
+        FROM
+            `user` s1,
+            user_role_relation s2,
+            role s3,
+            role_permission_relation s4,
+            permission s5
+        WHERE
+            s1.id = s2.user_id
+          AND s2.role_id = s3.id
+          AND s3.id = s4.role_id
+          AND s4.permission_id = s5.id
+          AND s1.user_name = #{username}
+    </select>
+</mapper>

@@ -45,7 +45,7 @@ export default {
   methods: {
     findById(textId) {
       this.$request.get('/text/findById/' + textId, {}, e => {
-        this.text = e.data
+        this.text = e.data.data
       })
     }
   }

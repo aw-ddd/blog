@@ -1,8 +1,9 @@
 import axios from "axios";
+import router from "../router";
 
 let http = axios.create({
   baseURL: process.env.VUE_APP_BASE_API,
-  // withCredentials: true,
+  withCredentials: true,//表示跨域请求时是否需要使用凭证
   headers: {
     'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'
   },
@@ -16,6 +17,23 @@ let http = axios.create({
     return newData;
   }]
 });
+/*请求拦截器 ==>对请求的参数进行处理*/
+// http.interceptors.request.use()
+/*响应拦截器 ==>对响应的参数进行处理*/
+http.interceptors.response.use(response => {
+  //如果用户登录失败，重新跳转到登录页面
+  if (!response.data.success) {
+    alert(response.data.errorMsg)
+    router.push({path: `/login`})
+  }
+  return response
+
+}, error => {
+  //响应错误处理
+  console.log("error")
+  console.log(error)
+  return Promise.reject(error)
+})
 
 function apiAxios(method, url, params, response) {
   http({

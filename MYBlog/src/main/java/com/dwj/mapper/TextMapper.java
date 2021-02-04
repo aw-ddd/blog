@@ -1,7 +1,9 @@
 package com.dwj.mapper;
 
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.dwj.pojo.Text;
-import tk.mybatis.mapper.common.Mapper;
+import org.springframework.stereotype.Repository;
 
-public interface TextMapper extends Mapper<Text> {
+@Repository
+public interface TextMapper extends BaseMapper<Text> {
 }

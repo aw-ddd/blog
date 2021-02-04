@@ -1,16 +1,14 @@
 package com.dwj.pojo;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
 import lombok.Data;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import java.time.LocalDateTime;
 
+//文本
 @Data
 public class Text {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer textId;
     private Integer userId;
     private String title;

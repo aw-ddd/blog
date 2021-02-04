@@ -25,7 +25,9 @@ export default {
   methods: {
     findAll() {
       this.$request.get('/text/findAll', {}, e => {
-        this.textList.push(...e.data)
+        if (e.data.data && e.data.data.length){
+          this.textList.push(...e.data.data)
+        }
       })
     },
     //跳转编辑页面
